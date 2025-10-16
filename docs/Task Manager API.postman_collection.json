@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "fde62b69-795f-4f0f-9df0-94e4ffb3eb91",
+		"name": "Task Manager API",
+		"description": "Laravel Task Manager API Collection for Ahmed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37029375",
+		"_collection_link": "https://galactic-zodiac-365089.postman.co/workspace/My-Workspace~b826e654-2fd0-4a08-8df8-d6b0b6187171/collection/37029375-fde62b69-795f-4f0f-9df0-94e4ffb3eb91?action=share&source=collection_link&creator=37029375"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"manager@example.com\", \"password\": \"12345678\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|X91ELpZFZ6Io88rAFXEwJTmulU1ZzmbONw7iIfa0a348f7da",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|5iLFzRAkJiuJSYsNWLNBLxbY4tXKtvaSbqigDoyt6ae07a51",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/tasks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|5iLFzRAkJiuJSYsNWLNBLxbY4tXKtvaSbqigDoyt6ae07a51",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/tasks/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|5iLFzRAkJiuJSYsNWLNBLxbY4tXKtvaSbqigDoyt6ae07a51",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Design Homepage\",\r\n  \"description\": \"Create a responsive homepage with header, footer, and main sections.\",\r\n\r\n  \"due_date\": \"2025-10-20\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/tasks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|5iLFzRAkJiuJSYsNWLNBLxbY4tXKtvaSbqigDoyt6ae07a51",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\": \"Updated Task Title\", \"description\": \"Updated Description\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/tasks/6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|5iLFzRAkJiuJSYsNWLNBLxbY4tXKtvaSbqigDoyt6ae07a51",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/tasks/6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|5iLFzRAkJiuJSYsNWLNBLxbY4tXKtvaSbqigDoyt6ae07a51",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"status\": \"completed\"}"
+				},
+				"url": {
+					"raw": "{{base_url}}/tasks/5/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"5",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Dependency",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|7Pjc9HOyKEGQalyqDwTrhcJVFMjAO3NlUpeBTC6Bfcbe8fb9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dependency_id\": 1}"
+				},
+				"url": {
+					"raw": "{{base_url}}/tasks/1/dependencies",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"1",
+						"dependencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Dependency",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|5iLFzRAkJiuJSYsNWLNBLxbY4tXKtvaSbqigDoyt6ae07a51",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{auth_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/tasks/1/dependencies/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"1",
+						"dependencies",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api"
+		},
+		{
+			"key": "auth_token",
+			"value": ""
+		}
+	]
+}
