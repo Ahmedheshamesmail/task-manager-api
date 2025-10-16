@@ -112,6 +112,9 @@ GET /tasks?status=pending&assignee_id=2&due_date_from=2025-10-10&due_date_to=202
 
 ## 🖼️ ERD Diagram
 ![ERD Diagram](docs/erd.png)
+<p align="center">
+  <img src="./docs/erd.png" alt="ERD Diagram" width="600"/>
+</p>
 
 
 Users
